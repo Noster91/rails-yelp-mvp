@@ -1,0 +1,12 @@
+<div class="container" id="restaurants">
+  <% @restaurants.each do |element| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center shadow">
+          <p class="ml-3 my-auto ">
+            <%= link_to element.name, restaurant_path(element) %>
+            <%= " - " + element.address + element.phone_number %>
+          </p>
+          <%# <p> <%= '<i class="fa-solid fa-star" ></i>'.html_safe * element.rating.to_i %><%# </p> %>
+        </li>
+  <% end %>
+  <p><%= link_to '<i class="fa-solid fa-circle-plus"></i> Create a new Restaurant'.html_safe, new_restaurant_path, :class => "btn btn-primary m-2 shadow" %> </p>
+</div>
